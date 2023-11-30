@@ -13,10 +13,11 @@ In the 'Validation cases' repository, there are two sample files that we used fo
 1. Abidoye et al (2014) - viscosity ratio of 500 and applied pressure drop of 10 kPa.
 2. Joekar et al (2011) - viscosity ratio of 1 and applied pressure drop of 60 kPa. 
 
-The variables are briefly described and we refer to suitable equations in the manuscript of "Semi-Analytical Model to Predict Dynamic Capillary Pressure
-- Water Saturation Relationships for Multiphase Flows in Porous-Media" paper.
+The variables are briefly described and we refer to suitable equations in the manuscript of "Semi-analytical model to predict dynamic capillary pressure - saturation relationship for flows in heterogeneous porous-media" paper.
 
 In the main repository, we place a 'sampleCase.py' file that the users can use to populate the input parameters and compute the dynamic capillary pressure.
+
+In the validation test cases folder there are two examples that the users can use to reproduce the results in the publication.
 
 Contact:
 harris.rabbani@qatar.tamu.edu, 
