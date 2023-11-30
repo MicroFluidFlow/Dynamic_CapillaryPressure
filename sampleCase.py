@@ -27,7 +27,7 @@ L =                            # length between inlet and outlet boundaries wher
 from scipy.optimize import minimize
 def f(x):
     rg  = x[0]                      # grain radius
-    b = x[1]                        # rugosity (heuristic) parameter
+    a = x[1]                        # rugosity (heuristic) parameter
     theta_radians  = math.radians(theta) 
     increament  = (1-swr)/t
     sw = np.zeros(t)
@@ -47,14 +47,14 @@ def f(x):
     Rt_m[0] = Rt_min                
     for i in range(1,t):
         Rt[i] = Rt[i-1] - DRtDsn[i-1]*(increament)  # NOTE: (-) for variable 'A' above and (-) for DRtDsn here represent Eq. 2 in manuscript 
-        Rt_m[i] = Rt[i]/(((sw[i]**b)+sn[i]**2)*math.exp(sw[i])) # Eq. 4 in manuscript
+        Rt_m[i] = Rt[i]/(((sw[i]**a)+sn[i]**2)*math.exp(sw[i])) # Eq. 4 in manuscript
     return (((Rt_m[500]-rt)**2)/(rt))                           # return the function output
 
 #Part - 4 (Minimisation algorithm to compute the grain radius and the heuristic parameter)
 res = minimize(f,[400e-6, 1.2],method='Nelder-Mead',tol=1e-30)
 #print(res)                          # Print the output of the results
 rg = res.x[0]                       # Copy the value of the 'res' output from above to this variable 
-b = res.x[1]
+a = res.x[1]
 
 #Part - 5 (Compute new set of pore throat radii from new values of rg and a)
 theta_radians  = math.radians(theta)
@@ -76,7 +76,7 @@ Rt[0] = Rt_min
 Rt_m[0] = Rt_min
 for i in range(1,t):
     Rt[i] = Rt[i-1] - DRtDsn[i-1]*(increament)
-    Rt_m[i] = Rt[i]/(((sw[i]**b)+sn[i]**2)*math.exp(sw[i]))
+    Rt_m[i] = Rt[i]/(((sw[i]**a)+sn[i]**2)*math.exp(sw[i]))
 
 #Part - 6 (Compute the static capillary pressure and compare with literature data)
 pc = (2*(ift*math.cos(theta_radians)))/(Rt_m*1000)          # in kPa
@@ -96,8 +96,10 @@ B2sw = sw*(8+(27*(1-math.tan(beta))**3))
 B3sw = phi*sw*(8+(27*(1-math.tan(beta))**3))
 Bsw = B1sw/((B2sw-B3sw)**(4/3))
 DRtDsw = Asw*Bsw
-DkDsw = (DRtDsw*Rt_m)*phi       # Eq. 9 in manuscript
-DkDsn = (-1*DRtDsn*Rt_m)*phi
+k =                             #Variable describing heterogeniety effects and impact of rel perm for the wetting phase
+j =                             #Variable describing heterogeniety effects and impact of rel perm for the non-wetting phase
+DkDsw = (2*DRtDsw*Rt_m)*phi*k   # Eq. 9 in manuscript
+DkDsn = -(2*DRtDsn*Rt_m)*phi*j
 
 #Part - 8 (compute the Darcy flow velocity)
 u = ((delta_p-pc)/(pc))*(ift*math.cos(theta_radians)*rt*phi)/(4*L*(mu_n*sn+mu_w*sw)) # Eq. 14 in manuscript
