@@ -1,0 +1,62 @@
+Note 'a' is the initial guess variable to determine rt. 
+
+Variables j,k data for:
+1. Joekar-Niasar V, Hassanizadeh SM (2011): Effect of fluids properties on non-equilibrium capillarity effects: Dynamic pore-network modeling. International Journal of Multiphase Flow 37(2):198–214
+Viscosity ratio, M = 0.1
+(a) dp = 60 kPa (Initial guess of a = 1.345)
+    j = 0.55, k = 0.55
+
+(b) dp = 90 kPa (Initial guess of a = 1.345)
+    j = 0.55, k = 0.6 
+
+Viscosity ratio, M = 1
+(a) dp = 45 kPa (Initial guess of a = 1.325)
+    j = 0.6, k = 0.6
+
+(b) dp = 60 kPa (Initial guess of a = 1.325)
+    j = 0.55, k = 0.55
+
+(c) dp = 90 kPa (Initial guess of a = 1.325)
+    j = 0.55, k = 0.65 
+
+Viscosity ratio, M = 10
+(a) dp = 45 kPa (Initial guess of a = 1.365)
+    j = 0.55, k = 0.6
+
+(b) dp = 60 kPa (Initial guess of a = 1.365)
+    j = 0.6, k = 0.6
+
+(c) dp = 90 kPa (Initial guess of a = 1.365)
+    j = 0.6, k = 0.6 
+
+Variables j,k data for:
+2. Abidoye LK, Das DB (2014) Scale dependent dynamic capillary pressure effect for two-phase flow in porous media. Advances in Water Resources 74:212–230
+Viscosity ratio, M = 200
+(a) dp = 10 kPa (Initial guess of a = 1.1)
+    j = 0.8, k = 0.8
+
+(b) dp = 15 kPa (Initial guess of a = 1.1)
+    j = 0.8, k = 0.8 
+
+(c) dp = 20 kPa (Initial guess of a = 1.1)
+    j = 0.8, k = 0.8 
+
+Viscosity ratio, M = 500
+(a) dp = 10 kPa (Initial guess of a = 1.1)
+    j = 0.6, k = 0.8
+
+(b) dp = 15 kPa (Initial guess of a = 1.1)
+    j = 0.35, k = 0.85
+
+(c) dp = 20 kPa (Initial guess of a = 1.1)
+    j = 0.325, k = 0.8 
+
+Viscosity ratio, M = 1000
+(a) dp = 10 kPa (Initial guess of a = 1.1)
+    j = 0.7, k = 0.7
+
+(b) dp = 15 kPa (Initial guess of a = 1.1)
+    j = 0.8, k = 0.6
+
+(c) dp = 20 kPa (Initial guess of a = 1.1)
+    j = 0.425, k = 0.6 
