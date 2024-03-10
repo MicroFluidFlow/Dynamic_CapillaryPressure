@@ -14,6 +14,7 @@ In the main repository, we place a 'sampleCase.py' file that the users can use t
 In the validation test cases folder there are two examples that the users can use to reproduce the results in the publication.
 
 Paper metadata:
+
 Title: Semi-analytical Model to Predict Dynamic Capillary Pressure–Saturation Relationship for Flows in Heterogeneous Porous Media
 
 Authors: Harris Sajjad Rabbani & Saideep Pavuluri  
